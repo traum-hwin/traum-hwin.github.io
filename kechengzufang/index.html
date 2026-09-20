@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="柯城租房网提供衢州市柯城区最新、最全的租房信息。涵盖公寓、单间、整租、合租及商铺租赁，真实房源，房东直租，助您轻松找到理想居所。">
+    <meta name="keywords" content="柯城租房, 衢州租房, 柯城区房屋出租, 长租公寓, 柯城商铺租赁, 柯城房东直租">
+    <title>柯城租房-本地真实房源与房东直租信息平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-light: #f8f9fa;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e1e4e8;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: #fff;
+            border: 1px solid var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background: #d35400;
+            border-color: #d35400;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            padding: 60px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .search-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            max-width: 800px;
+            margin: 0 auto;
+            gap: 12px;
+            box-shadow: var(--shadow-md);
+            flex-wrap: wrap;
+        }
+
+        .form-group {
+            flex: 1;
+            min-width: 150px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .form-group input, .form-group select {
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--accent-color);
+        }
+
+        .btn-search {
+            width: 100%;
+            height: 44px;
+            margin-top: auto;
+        }
+
+        /* Quick Stats */
+        .stats-bar {
+            background: var(--bg-light);
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 24px;
+            color: var(--accent-color);
+            margin-bottom: 4px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Main Layout */
+        .main-content {
+            padding: 40px 0;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Filter Bar */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            background: #eee;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag.active, .tag:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Property Grid */
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .property-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .property-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-color);
+            z-index: 2;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+        }
+        
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-location {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-price {
+            font-size: 20px;
+            color: #e74c3c;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .card-price small {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .card-features {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--bg-light);
+            padding-top: 12px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .ad-banner {
+            background: #e1e4e8;
+            height: 250px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ad-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(45deg, rgba(0,0,0,0.03), rgba(0,0,0,0.03) 10px, transparent 10px, transparent 20px);
+        }
+
+        .guide-list h4 {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .guide-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .guide-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--accent-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin-right: 12px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .guide-text h5 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .guide-text p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--bg-light);
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+        }
+
+        .faq-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item h4 {
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                height: auto;
+                flex-direction: column;
+                padding: 10px 0;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+                font-size: 14px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color)"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                柯城<span>租房</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">最新房源</a></li>
+                    <li><a href="#">合租专区</a></li>
+                    <li><a href="#">商铺租赁</a></li>
+                    <li><a href="#">租房攻略</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">发布房源</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>在柯城，找到你的理想家</h1>
+            <p>实时更新柯城区真实房源，房东直租，无中介费，让租房更简单。</p>
+            
+            <div class="search-box">
+                <div class="form-group">
+                    <label>区域</label>
+                    <select>
+                        <option>全柯城区</option>
+                        <option>府山街道</option>
+                        <option>信安街道</option>
+                        <option>荷花街道</option>
+                        <option>衢化街道</option>
+                        <option>花园街道</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>户型</label>
+                    <select>
+                        <option>不限</option>
+                        <option>一室一厅</option>
+                        <option>两室一厅</option>
+                        <option>三室及以上</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>租金范围</label>
+                    <select>
+                        <option>不限</option>
+                        <option>1000元以下</option>
+                        <option>1000-2000元</option>
+                        <option>2000-3500元</option>
+                        <option>3500元以上</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary btn-search">搜索房源</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>1,280+</h3>
+                    <p>在售房源</p>
+                </div>
+                <div class="stat-item">
+                    <h3>850+</h3>
+                    <p>房东直租</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5.2万</h3>
+                    <p>累计浏览</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.9</h3>
+                    <p>用户好评</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container main-content">
+        <!-- Left Column: Listings -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">最新推荐</h2>
+                <div class="filter-tags">
+                    <span class="tag active">最新发布</span>
+                    <span class="tag">价格最低</span>
+                    <span class="tag">高评分</span>
+                </div>
+            </div>
+
+            <div class="property-grid">
+                <!-- Card 1 -->
+                <article class="property-card">
+                    <div class="card-badge">房东直租</div>
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/house1/400/300" alt="柯城两室一厅房源">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">信安花园 精装两室一厅 近地铁</h3>
+                        <div class="card-location">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            信安街道 · 1.2km
+                        </div>
+                        <div class="card-price">¥3200 <small>/月</small></div>
+                        <div class="card-features">
+                            <span class="feature-item">🏠 2室1厅</span>
+                            <span class="feature-item">🛏️ 2床</span>
+                            <span class="feature-item">🚿 独卫</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="property-card">
+                    <div class="card-badge">急租</div>
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/house2/400/300" alt="柯城一室公寓房源">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">柯城区中心 单身公寓 近商圈</h3>
+                        <div class="card-location">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            府山街道 · 0.5km
+                        </div>
+                        <div class="card-price">¥1800 <small>/月</small></div>
+                        <div class="card-features">
+                            <span class="feature-item">🏠 1室1厅</span>
+                            <span class="feature-item">🛏️ 1床</span>
+                            <span class="feature-item">🛋️ 简装</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="property-card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/house3/400/300" alt="柯城三室大户型房源">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">花园新村 三室两厅 家电全配</h3>
+                        <div class="card-location">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            花园街道 · 2.0km
+                        </div>
+                        <div class="card-price">¥4500 <small>/月</small></div>
+                        <div class="card-features">
+                            <span class="feature-item">🏠 3室2厅</span>
+                            <span class="feature-item">🛏️ 3床</span>
+                            <span class="feature-item">🚿 双卫</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="property-card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/house4/400/300" alt="柯城合租单间房源">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">阳光小区 合租次卧 采光极佳</h3>
+                        <div class="card-location">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            衢化街道 · 1.5km
+                        </div>
+                        <div class="card-price">¥950 <small>/月</small></div>
+                        <div class="card-features">
+                            <span class="feature-item">🏠 合租</span>
+                            <span class="feature-item">🛏️ 1床</span>
+                            <span class="feature-item">🚿 共用</span>
+                        </div>
+                    </div>
+                </article>
+
+                 <!-- Card 5 -->
+                 <article class="property-card">
+                    <div class="card-badge">房东直租</div>
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/house5/400/300" alt="柯城精装两居室房源">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">儒学路 精装两居室 家电齐全</h3>
+                        <div class="card-location">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            府山街道 · 0.8km
+                        </div>
+                        <div class="card-price">¥3500 <small>/月</small></div>
+                        <div class="card-features">
+                            <span class="feature-item">🏠 2室1厅</span>
+                            <span class="feature-item">🛋️ 精装</span>
+                            <span class="feature-item">🚿 独卫</span>
+                        </div>
+                    </div>
+                </article>
+
+                 <!-- Card 6 -->
+                 <article class="property-card">
+                    <div class="card-badge">空置</div>
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/house6/400/300" alt="柯城商铺出租房源">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">柯城商业街 临街商铺 出租</h3>
+                        <div class="card-location">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            信安街道 · 0.3km
+                        </div>
+                        <div class="card-price">¥8000 <small>/月</small></div>
+                        <div class="card-features">
+                            <span class="feature-item">🏢 临街商铺</span>
+                            <span class="feature-item">📐 60平</span>
+                            <span class="feature-item">🚶 人流大</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn btn-outline" style="border-color: var(--primary-color); color: var(--primary-color);">查看更多房源</button>
+            </div>
+        </section>
+
+        <!-- Right Column: Sidebar -->
+        <aside class="sidebar">
+            <div class="ad-banner">
+                <div>
+                    <h3>广告位招租</h3>
+                    <p>联系客服获取详情</p>
+                </div>
+            </div>
+
+            <div class="guide-list">
+                <h4>租房指南</h4>
+                
+                <div class="guide-item">
+                    <div class="guide-icon">1</div>
+                    <div class="guide-text">
+                        <h5>如何选择靠谱房源</h5>
+                        <p>查看房东身份认证，警惕低价陷阱。</p>
+                    </div>
+                </div>
+
+                <div class="guide-item">
+                    <div class="guide-icon">2</div>
+                    <div class="guide-text">
+                        <h5>签约注意事项</h5>
+                        <p>明确租金、押金及维修责任条款。</p>
+                    </div>
+                </div>
+
+                <div class="guide-item">
+                    <div class="guide-icon">3</div>
+                    <div class="guide-text">
+                        <h5>柯城租房热门区域</h5>
+                        <p>了解府山、信安等区域交通与配套。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-list">
+                <h4>热门推荐</h4>
+                <ul style="display: flex; flex-direction: column; gap: 12px;">
+                    <li><a href="#" style="font-size: 14px; color: var(--text-secondary); display: flex; justify-content: space-between;"><span>🔸 信安花园</span> <span>120套</span></a></li>
+                    <li><a href="#" style="font-size: 14px; color: var(--text-secondary); display: flex; justify-content: space-between;"><span>🔸 荷花新村</span> <span>85套</span></a></li>
+                    <li><a href="#" style="font-size: 14px; color: var(--text-secondary); display: flex; justify-content: space-between;"><span>🔸 衢化小区</span> <span>64套</span></a></li>
+                    <li><a href="#" style="font-size: 14px; color: var(--text-secondary); display: flex; justify-content: space-between;"><span>🔸 柯城二中附近</span> <span>50套</span></a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">常见问题 (FAQ)</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>柯城租房价格大概是多少？</h4>
+                    <p>柯城区一室公寓租金在1500-2500元之间，两室一厅在2500-4000元之间，具体取决于地段和装修情况。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>租房需要交哪些费用？</h4>
+                    <p>通常需要支付押金（一般为一个月租金）和第一个月租金。部分地区可能涉及物业费，需提前确认。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>如何确认房东身份？</h4>
+                    <p>建议查看房产证原件或购房合同，核实产权人姓名是否与租房人一致，或通过平台认证信息。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>可以中途退租吗？</h4>
+                    <p>这取决于租赁合同条款。通常提前一个月通知房东可协商退租，但可能需要承担违约金。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>柯城租房</h3>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        专注于衢州市柯城区本地租房服务，提供真实、高效、透明的房屋租赁信息。我们致力于连接房东与租客，打造安全的居住环境。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速导航</h3>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">最新房源</a></li>
+                        <li><a href="#">合租专区</a></li>
+                        <li><a href="#">商铺租赁</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>服务支持</h3>
+                    <ul>
+                        <li><a href="#">发布房源</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">用户协议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li>电话：0570-1234567</li>
+                        <li>邮箱：kecheng@rent.com</li>
+                        <li>地址：浙江省衢州市柯城区</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 柯城租房网 版权所有 | 仅供展示用途</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                                             </html>
