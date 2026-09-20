@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="铁牛视频提供高清视频资源在线播放服务，涵盖热门影视、动漫、搞笑短视频及各类娱乐内容。支持多种清晰度切换，拥有简洁流畅的播放体验。">
+    <meta name="keywords" content="铁牛视频,在线视频,高清影视,动漫,短视频">
+    <title>铁牛视频-高清影视在线播放与娱乐资源平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f1faee;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #f1f1f1;
+            border-radius: 20px;
+            padding: 5px 15px;
+            align-items: center;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 5px;
+            width: 150px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #457b9d 100%);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        .section-title a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-cover {
+            position: relative;
+            aspect-ratio: 16/9;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .video-card:hover .card-cover img {
+            transform: scale(1.05);
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .video-card:hover .play-icon {
+            opacity: 1;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar */
+        .sidebar-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        .rank-list {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ddd;
+            width: 25px;
+            text-align: center;
+        }
+
+        .rank-item:nth-child(1) .rank-num { color: #ff4757; }
+        .rank-item:nth-child(2) .rank-num { color: #ffa502; }
+        .rank-item:nth-child(3) .rank-num { color: #2ed573; }
+
+        .rank-info {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .rank-title {
+            font-size: 14px;
+            font-weight: 500;
+            display: block;
+        }
+
+        .rank-tag {
+            font-size: 12px;
+            color: var(--primary-color);
+            margin-top: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2d42;
+            color: #8d99ae;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #3d405b;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+            
+            .header-inner {
+                justify-content: center;
+            }
+
+            .sidebar-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                </svg>
+                铁牛视频<span>TV</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">电影</a>
+                <a href="#">电视剧</a>
+                <a href="#">动漫</a>
+                <a href="#">综艺</a>
+                <a href="#">纪录片</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索片名/演员...">
+                <button>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>海量高清视频，随时畅享</h1>
+        <p>铁牛视频致力于为用户提供最优质的影视观看体验，包含最新热门剧集、经典动漫及独家原创内容。</p>
+        <div class="hero-buttons">
+            <button class="btn btn-primary">立即开始观看</button>
+            <button class="btn btn-secondary">查看排行榜</button>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="sidebar-layout">
+            <!-- Main Content Area -->
+            <main>
+                <section class="section-title">
+                    <h2>今日热播</h2>
+                    <a href="#">更多 &gt;</a>
+                </section>
+                
+                <div class="video-grid">
+                    <!-- Video Card 1 -->
+                    <article class="video-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/vid1/400/225" alt="电影封面">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">星际穿越：未知的边界</h3>
+                            <div class="card-meta">
+                                <span>科幻 / 冒险</span>
+                                <span>2小时前更新</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 2 -->
+                    <article class="video-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/vid2/400/225" alt="电视剧封面">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">都市情感：第24集</h3>
+                            <div class="card-meta">
+                                <span>剧情 / 爱情</span>
+                                <span>1小时前更新</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 3 -->
+                    <article class="video-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/vid3/400/225" alt="动漫封面">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">魔法学院：决战时刻</h3>
+                            <div class="card-meta">
+                                <span>动漫 / 冒险</span>
+                                <span>刚刚更新</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 4 -->
+                    <article class="video-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/vid4/400/225" alt="综艺封面">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">极限挑战：荒岛求生</h3>
+                            <div class="card-meta">
+                                <span>综艺 / 生存</span>
+                                <span>3小时前更新</span>
+                            </div>
+                        </div>
+                    </article>
+                     <!-- Video Card 5 -->
+                     <article class="video-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/vid5/400/225" alt="纪录片封面">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">地球脉动 III：深海</h3>
+                            <div class="card-meta">
+                                <span>纪录片 / 自然</span>
+                                <span>昨天更新</span>
+                            </div>
+                        </div>
+                    </article>
+                     <!-- Video Card 6 -->
+                     <article class="video-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/vid6/400/225" alt="搞笑封面">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">爆笑生活：周末特辑</h3>
+                            <div class="card-meta">
+                                <span>搞笑 / 生活</span>
+                                <span>刚刚更新</span>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="section-title" style="margin-top: 40px;">
+                    <h2>高分推荐</h2>
+                    <a href="#">更多 &gt;</a>
+                </section>
+                <div class="video-grid">
+                     <!-- Video Card 7 -->
+                     <article class="video-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/vid7/400/225" alt="推荐封面">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">沉默的证人：第一季</h3>
+                            <div class="card-meta">
+                                <span>悬疑 / 犯罪</span>
+                                <span>经典推荐</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Video Card 8 -->
+                    <article class="video-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/vid8/400/225" alt="推荐封面">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">黑客帝国：动画版</h3>
+                            <div class="card-meta">
+                                <span>动画 / 科幻</span>
+                                <span>经典推荐</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </main>
+
+            <!-- Sidebar -->
+            <aside>
+                <div class="rank-list">
+                    <div class="section-title">
+                        <h2>热门排行</h2>
+                    </div>
+                    <ul>
+                        <li class="rank-item">
+                            <span class="rank-num">1</span>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">狂飙：大结局</a>
+                                <span class="rank-tag">今日热门</span>
+                            </div>
+                        </li>
+                        <li class="rank-item">
+                            <span class="rank-num">2</span>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">流浪地球2</a>
+                                <span class="rank-tag">电影榜</span>
+                            </div>
+                        </li>
+                        <li class="rank-item">
+                            <span class="rank-num">3</span>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">甄嬛传：重播</a>
+                                <span class="rank-tag">经典重温</span>
+                            </div>
+                        </li>
+                        <li class="rank-item">
+                            <span class="rank-num">4</span>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">三体：动画版</a>
+                                <span class="rank-tag">科幻新片</span>
+                            </div>
+                        </li>
+                        <li class="rank-item">
+                            <span class="rank-num">5</span>
+                            <div class="rank-info">
+                                <a href="#" class="rank-title">原神：动画短片</a>
+                                <span class="rank-tag">二次元</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 30px; background: white; padding: 20px; border-radius: 8px; box-shadow: var(--shadow);">
+                    <div class="section-title">
+                        <h2>关于铁牛视频</h2>
+                    </div>
+                    <p style="font-size: 13px; color: #666; margin-bottom: 10px;">
+                        铁牛视频致力于打造一个绿色、健康的在线视频分享平台。我们提供丰富的影视资源，支持高清播放，让用户随时随地享受视觉盛宴。
+                    </p>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <button class="btn btn-primary" style="width: 100%; font-size: 13px; padding: 8px;">下载客户端</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>铁牛视频</h3>
+                <p style="font-size: 13px; line-height: 1.8;">
+                    铁牛视频是一个提供海量高清视频内容的在线播放平台。我们精选各类优质影视作品，包括电影、电视剧、动漫、综艺及纪录片等，致力于为用户带来极致的观影体验。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>快速导航</h3>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">分类浏览</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>热门分类</h3>
+                <ul>
+                    <li><a href="#">动作片</a></li>
+                    <li><a href="#">喜剧片</a></li>
+                    <li><a href="#">爱情片</a></li>
+                    <li><a href="#">纪录片</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>联系我们</h3>
+                <ul>
+                    <li><a href="#">用户反馈</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">加入我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 铁牛视频 版权所有. 本站内容均来自互联网，仅供学习交流使用。</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
