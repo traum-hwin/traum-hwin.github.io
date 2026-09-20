@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="粗口大全收录各类俚语、脏话、诅咒语及网络流行语，提供详细的分类、使用场景及文化背景解析。适合语言学研究者、编剧及对语言文化感兴趣的读者。">
+    <meta name="keywords" content="粗口大全,脏话,俚语,诅咒语,网络流行语,语言文化">
+    <title>粗口大全-网络俚语与诅咒语分类解析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-secondary: #666666;
+            --accent-color: #e63946;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #d62828;
+        }
+
+        /* Warning Banner */
+        .warning-banner {
+            background-color: #fff3cd;
+            color: #856404;
+            text-align: center;
+            padding: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title h2 {
+            font-weight: 700;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: var(--accent-color);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .category-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .category-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .card-link {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* List Style */
+        .list-group {
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.1s;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .term {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .meaning {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: #eee;
+            color: #555;
+        }
+
+        /* Context Section */
+        .context-section {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 40px;
+        }
+
+        .context-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .context-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .context-item h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .context-item p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        /* Safety Notice */
+        .safety-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .safety-box h3 {
+            color: #0d47a1;
+            margin-bottom: 8px;
+        }
+
+        .safety-box p {
+            color: #1565c0;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #888;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 12px 0;
+            }
+
+            nav ul {
+                margin-top: 12px;
+                gap: 16px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .context-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>粗口</span>大全
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#categories">分类目录</a></li>
+                    <li><a href="#context">使用语境</a></li>
+                    <li><a href="#safety">免责声明</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="warning-banner">
+        ⚠️ 本站内容仅供语言学研究与文学创作参考，请勿在现实生活中使用，以免造成不必要的冲突。
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h1>网络俚语与诅咒语分类解析</h1>
+            <p>收录各类俚语、脏话、诅咒语及网络流行语，提供详细的分类、使用场景及文化背景解析。</p>
+            <a href="#categories" class="cta-button">开始浏览</a>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Safety Notice -->
+        <div id="safety" class="safety-box">
+            <h3>使用提示</h3>
+            <p>语言具有两面性。了解粗口和俚语的构成有助于理解社会文化变迁、网络亚文化以及影视作品的创作。本站旨在提供客观的语言学资料，而非鼓励不当行为。</p>
+        </div>
+
+        <!-- Categories -->
+        <section id="categories">
+            <div class="section-title">
+                <h2>分类目录</h2>
+            </div>
+            <div class="grid-layout">
+                <article class="category-card">
+                    <span class="category-icon">🗣️</span>
+                    <h3>口语脏话</h3>
+                    <p>日常生活中最常见的表达不满、愤怒或攻击性的词汇，涵盖侮辱性称呼及攻击性动词。</p>
+                    <a href="#" class="card-link">查看列表 &rarr;</a>
+                </article>
+                <article class="category-card">
+                    <span class="category-icon">💻</span>
+                    <h3>网络流行语</h3>
+                    <p>源自互联网社区，经过演化形成的特定圈层语言，常带有讽刺、调侃或自嘲意味。</p>
+                    <a href="#" class="card-link">查看列表 &rarr;</a>
+                </article>
+                <article class="category-card">
+                    <span class="category-icon">📜</span>
+                    <h3>诅咒语</h3>
+                    <p>用于表达强烈恶意、希望对方遭遇不幸的言语形式，多见于游戏竞技或激烈争吵中。</p>
+                    <a href="#" class="card-link">查看列表 &rarr;</a>
+                </article>
+                <article class="category-card">
+                    <span class="category-icon">🎭</span>
+                    <h3>影视台词</h3>
+                    <p>经典电影、电视剧及动漫作品中出现的标志性脏话或口头禅，具有极高的辨识度。</p>
+                    <a href="#" class="card-link">查看列表 &rarr;</a>
+                </article>
+                <article class="category-card">
+                    <span class="category-icon">🧑‍🤝‍🧑</span>
+                    <h3>方言俚语</h3>
+                    <p>特定地区方言中特有的表达方式，往往带有浓郁的地域文化色彩和幽默感。</p>
+                    <a href="#" class="card-link">查看列表 &rarr;</a>
+                </article>
+                <article class="category-card">
+                    <span class="category-icon">🛡️</span>
+                    <h3>防御性用语</h3>
+                    <p>用于自我保护、化解尴尬或反讽他人的语言技巧，虽不直接攻击，但暗含锋芒。</p>
+                    <a href="#" class="card-link">查看列表 &rarr;</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contextual Analysis -->
+        <section id="context">
+            <div class="section-title">
+                <h2>使用语境与解析</h2>
+            </div>
+            <div class="context-section">
+                <div class="context-grid">
+                    <div class="context-item">
+                        <h4>攻击性语境</h4>
+                        <p>在激烈的争吵或竞技对抗中，粗口通常用于宣泄情绪、贬低对手或制造心理压力。这种语境下的语言往往短促有力，旨在迅速造成伤害。</p>
+                        <div class="tags">
+                            <span class="tag">竞技</span>
+                            <span class="tag">冲突</span>
+                            <span class="tag">宣泄</span>
+                        </div>
+                    </div>
+                    <div class="context-item">
+                        <h4>幽默与调侃</h4>
+                        <p>在熟人社交或网络段子中，适度使用粗口可以调节气氛，增加语言的生动性和真实感，起到“破冰”或“吐槽”的作用。</p>
+                        <div class="tags">
+                            <span class="tag">社交</span>
+                            <span class="tag">幽默</span>
+                            <span class="tag">吐槽</span>
+                        </div>
+                    </div>
+                    <div class="context-item">
+                        <h4>文学与影视</h4>
+                        <p>在文学创作和影视作品中，粗口是塑造人物性格、反映时代背景或推动剧情发展的重要工具，能够增强角色的真实感和冲突感。</p>
+                        <div class="tags">
+                            <span class="tag">创作</span>
+                            <span class="tag">角色</span>
+                            <span class="tag">冲突</span>
+                        </div>
+                    </div>
+                    <div class="context-item">
+                        <h4>禁忌与禁忌语</h4>
+                        <p>某些词汇因涉及宗教、生理或社会禁忌，使用时需格外谨慎。了解这些禁忌有助于避免冒犯他人或违反社会规范。</p>
+                        <div class="tags">
+                            <span class="tag">禁忌</span>
+                            <span class="tag">社交礼仪</span>
+                            <span class="tag">规范</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sample List -->
+        <section id="list">
+            <div class="section-title">
+                <h2>常用词汇示例</h2>
+            </div>
+            <div class="list-group">
+                <div class="list-item">
+                    <div>
+                        <div class="term">卧槽</div>
+                        <div class="meaning">表示惊讶、震惊或感叹，也常作为语气助词使用。</div>
+                    </div>
+                    <div class="tags"><span class="tag">感叹</span></div>
+                </div>
+                <div class="list-item">
+                    <div>
+                        <div class="term">滚</div>
+                        <div class="meaning">命令对方离开，带有强烈的驱逐和轻蔑意味。</div>
+                    </div>
+                    <div class="tags"><span class="tag">命令</span></div>
+                </div>
+                <div class="list-item">
+                    <div>
+                        <div class="term">傻逼</div>
+                        <div class="meaning">对智商或行为能力表示贬低的称呼。</div>
+                    </div>
+                    <div class="tags"><span class="tag">侮辱</span></div>
+                </div>
+                <div class="list-item">
+                    <div>
+                        <div class="term">草泥马</div>
+                        <div class="meaning">源自网络恶搞文化，具有极强的反讽和攻击性。</div>
+                    </div>
+                    <div class="tags"><span class="tag">反讽</span></div>
+                </div>
+                <div class="list-item">
+                    <div>
+                        <div class="term">去你大爷</div>
+                        <div class="meaning">表示极度的不满和否定，常作为反问句的结尾。</div>
+                    </div>
+                    <div class="tags"><span class="tag">否定</span></div>
+                </div>
+                <div class="list-item">
+                    <div>
+                        <div class="term">CNM</div>
+                        <div class="meaning">网络常用缩写，作为感叹词或对他人进行攻击。</div>
+                    </div>
+                    <div class="tags"><span class="tag">缩写</span></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="copyright">
+                &copy; 2023 粗口大全 - 语言文化研究参考平台. All Rights Reserved.
+            </div>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">隐私政策</a>
+                <a href="#">联系管理</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
