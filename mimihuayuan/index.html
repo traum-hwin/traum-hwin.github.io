@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="秘密花园剧情分集介绍 - 深入解析韩剧《秘密花园》的经典剧情、人物关系及分集详细梗概，涵盖罗文姬、玄彬、河智苑的精彩演绎，适合追剧指南与影评参考。">
+    <meta name="keywords" content="秘密花园剧情分集介绍, 秘密花园分集剧情, 秘密花园罗文姬, 秘密花园玄彬, 秘密花园韩剧">
+    <title>秘密花园剧情分集介绍 - 经典韩剧罗文姬玄彬河智苑全剧解析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/garden/1200/400') no-repeat center center/cover;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* 核心信息 */
+        .intro-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .intro-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .intro-card h3 {
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 0.5rem;
+        }
+
+        .cast-list {
+            list-style: none;
+        }
+
+        .cast-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .cast-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+
+        /* 分集列表 */
+        .episode-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .episode-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .episode-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .episode-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .episode-header h3 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .episode-number {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .episode-content {
+            padding: 1.5rem;
+            display: none;
+            border-top: 1px solid #eee;
+            background-color: #fafafa;
+        }
+
+        .episode-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .episode-content p {
+            margin-bottom: 0.8rem;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        .episode-tags span {
+            display: inline-block;
+            background: #e1e8ed;
+            color: var(--text-secondary);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+
+        /* 章节导航 */
+        .chapter-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .chapter-btn {
+            background: var(--card-bg);
+            border: 1px solid #ddd;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .chapter-btn:hover, .chapter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* 视频推荐/相关 */
+        .recommendation {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .recommendation h2 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+        
+        .play-icon {
+            font-size: 3rem;
+            opacity: 0.8;
+        }
+
+        .video-info {
+            padding: 1rem;
+        }
+
+        .video-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* 动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .intro-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .nav-links a {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">韩剧档案室</a>
+                <div class="nav-links">
+                    <a href="#">首页</a>
+                    <a href="#">经典回顾</a>
+                    <a href="#">演员作品</a>
+                    <a href="#">关于我们</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>秘密花园剧情分集介绍</h1>
+            <p>重温2010年经典韩剧《秘密花园》，深入解析罗文姬、玄彬、河智苑之间跨越灵魂的浪漫爱情故事。</p>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="intro-section">
+            <article class="intro-card">
+                <h3>剧集概况</h3>
+                <p><strong>首播时间：</strong>2010年3月31日</p>
+                <p><strong>导演：</strong>申源浩</p>
+                <p><strong>主演：</strong>玄彬、河智苑、罗文姬</p>
+                <p><strong>类型：</strong>爱情、奇幻、喜剧</p>
+                <br>
+                <p>《秘密花园》讲述了性格截然不同的两个灵魂——财阀高尔夫球手金洙元和顶级女明星吉罗琳，因为一次意外事故灵魂互换。在经历了一系列啼笑皆非的互动后，两人逐渐产生了真挚的情感，并共同面对生活中的挑战。</p>
+            </article>
+
+            <article class="intro-card">
+                <h3>主要角色</h3>
+                <ul class="cast-list">
+                    <li><strong>金洙元（玄彬 饰）：</strong>财团继承人，性格傲慢、毒舌，但在罗琳面前展现出温柔的一面。</li>
+                    <li><strong>吉罗琳（河智苑 饰）：</strong>大明星，性格直率、豪爽，拥有极高的专业素养和演技。</li>
+                    <li><strong>徐英玉（罗文姬 饰）：</strong>洙元的母亲，毒舌界的“皇太后”，对罗琳一见钟情。</li>
+                    <li><strong>李正信（刘智泰 饰）：</strong>洙元的儿时好友，也是罗琳的经纪人。</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Chapter Navigation -->
+        <nav class="chapter-nav">
+            <a href="#" class="chapter-btn active">全部剧集</a>
+            <a href="#ep1" class="chapter-btn">第1-10集</a>
+            <a href="#ep11" class="chapter-btn">第11-20集</a>
+            <a href="#ep21" class="chapter-btn">第21-30集</a>
+        </nav>
+
+        <!-- Episodes List -->
+        <section class="episode-list" id="episodes-container">
+            
+            <!-- Episode 1 -->
+            <article class="episode-item" id="ep1">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第一集：灵魂互换的意外</h3>
+                    <span class="episode-number">E01</span>
+                </div>
+                <div class="episode-content active">
+                    <p>高尔夫球手金洙元在球场上遭遇了突如其来的雷雨，匆忙跑回车内。与此同时，明星吉罗琳在暴雨中为躲避记者狂奔，两人在同一地点几乎同时遭遇车祸。</p>
+                    <p>醒来后，金洙元发现自己身处吉罗琳的豪宅，而吉罗琳则身处金洙元的豪宅。两人都震惊于对方出现在自己的身体里，尤其是金洙元发现自己变成了女人，而吉罗琳变成了男人。金洙元试图通过电话联系罗琳，但对方似乎并不相信他的遭遇。</p>
+                    <div class="episode-tags">
+                        <span>车祸</span>
+                        <span>灵魂互换</span>
+                        <span>身份错位</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 2 -->
+            <article class="episode-item" id="ep2">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第二集：难以置信的相处</h3>
+                    <span class="episode-number">E02</span>
+                </div>
+                <div class="episode-content">
+                    <p>金洙元（女）为了维持生计，不得不尝试学习吉罗琳的演技，并在一场戏中展现出了惊人的天赋。吉罗琳（男）则试图接管金洙元的高尔夫球会，但因为缺乏专业知识而闹出笑话。</p>
+                    <p>两人在相处过程中逐渐发现彼此的优点。金洙元学会了在演戏中投入情感，而吉罗琳也开始理解金洙元在商业世界中的压力。两人约定互相保守秘密，并约定在三天后的某个地点交换身体，如果失败则永远无法变回原样。</p>
+                    <div class="episode-tags">
+                        <span>演技突破</span>
+                        <span>高尔夫球场</span>
+                        <span>约定交换</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 3 -->
+            <article class="episode-item" id="ep3">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第三集：母亲的登场</h3>
+                    <span class="episode-number">E03</span>
+                </div>
+                <div class="episode-content">
+                    <p>吉罗琳（男）回到金洙元家，遇到了金洙元的母亲徐英玉。罗文姬饰演的徐英玉以其标志性的毒舌和幽默，瞬间抓住了观众的眼球。她对吉罗琳的“儿子”产生了浓厚的兴趣，甚至主动提出要帮他追吉罗琳（女）。</p>
+                    <p>徐英玉的介入让两人的关系变得复杂起来。金洙元（女）对母亲的“催婚”感到头疼，而吉罗琳（男）则不得不应付母亲的“关怀”。徐英玉的毒舌语录成为了本集的一大亮点。</p>
+                    <div class="episode-tags">
+                        <span>罗文姬</span>
+                        <span>毒舌老妈</span>
+                        <span>家庭喜剧</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 4 -->
+            <article class="episode-item" id="ep4">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第四集：儿时好友的重逢</h3>
+                    <span class="episode-number">E04</span>
+                </div>
+                <div class="episode-content">
+                    <p>金洙元（女）在片场遇到了李正信，她惊讶地发现正信竟然是金洙元儿时最好的朋友。正信并不知道金洙元现在的真实身份，只是觉得这个女演员长得有点像金洙元。</p>
+                    <p>吉罗琳（男）也见到了正信，两人之间的关系变得微妙。正信开始怀疑金洙元和吉罗琳之间的关系，而吉罗琳则试图利用正信来了解金洙元（女）的生活。儿时的回忆与现实的错位交织在一起。</p>
+                    <div class="episode-tags">
+                        <span>儿时好友</span>
+                        <span>李正信</span>
+                        <span>回忆杀</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 5 -->
+            <article class="episode-item" id="ep5">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第五集：感情的萌芽</h3>
+                    <span class="episode-number">E05</span>
+                </div>
+                <div class="episode-content">
+                    <p>在一次拍摄中，金洙元（女）为了保护吉罗琳（男）免受记者的骚扰，展现出了惊人的勇气。吉罗琳（男）被金洙元（女）的举动深深打动，两人在雨中产生了一种特殊的情感。</p>
+                    <p>金洙元（女）也开始意识到自己对吉罗琳（男）产生了好感，但她不敢相信这是爱。吉罗琳（男）则试图压抑自己的情感，因为他认为自己不应该爱上一个“女人”，而金洙元现在就是女人。</p>
+                    <div class="episode-tags">
+                        <span>雨中告白</span>
+                        <span>情感升温</span>
+                        <span>内心挣扎</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 6 -->
+            <article class="episode-item" id="ep6">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第六集：母亲的助攻</h3>
+                    <span class="episode-number">E06</span>
+                </div>
+                <div class="episode-content">
+                    <p>徐英玉（罗文姬饰）发现了金洙元（女）和吉罗琳（男）之间的暧昧关系，她决定全力助攻。她不仅在家庭聚会中故意制造两人独处的机会，还故意说出一些“毒舌”但暗含深意的话来刺激两人。</p>
+                    <p>在母亲的“逼迫”下，金洙元（女）和吉罗琳（男）开始尝试像情侣一样相处。两人一起做饭、一起散步，关系逐渐拉近。然而，两人都害怕一旦交换成功，彼此的关系就会恢复原状。</p>
+                    <div class="episode-tags">
+                        <span>助攻</span>
+                        <span>家庭聚会</span>
+                        <span>暧昧期</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 7 -->
+            <article class="episode-item" id="ep7">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第七集：正信的误会</h3>
+                    <span class="episode-number">E07</span>
+                </div>
+                <div class="episode-content">
+                    <p>李正信对金洙元（女）产生了好感，但他并不知道金洙元就是他儿时的朋友。吉罗琳（男）察觉到了正信的意图，感到非常嫉妒。他开始故意在正信面前表现，试图引起金洙元（女）的注意。</p>
+                    <p>金洙元（女）对正信的好感感到困惑，她不知道该如何面对正信的深情。吉罗琳（男）则利用正信的嫉妒心来推动两人的关系，但他自己也陷入了情感的漩涡中。</p>
+                    <div class="episode-tags">
+                        <span>三角关系</span>
+                        <span>嫉妒</span>
+                        <span>误会</span>
+                    </div>
+                </div>
+            </article>
+
+             <!-- Episode 8 -->
+             <article class="episode-item" id="ep8">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第八集：身体交换的危机</h3>
+                    <span class="episode-number">E08</span>
+                </div>
+                <div class="episode-content">
+                    <p>两人约定的三天时间即将过去，但身体交换的问题依然没有解决。两人决定尝试各种方法来恢复原状，包括去寺庙祈祷、去医院检查，甚至尝试在雷雨中进行仪式。</p>
+                    <p>然而，这些方法都失败了。两人开始感到绝望，害怕永远无法变回原样。金洙元（女）和吉罗琳（男）决定不再逃避，而是接受现在的现实，并尝试在对方的身体里过好生活。</p>
+                    <div class="episode-tags">
+                        <span>危机</span>
+                        <span>尝试恢复</span>
+                        <span>绝望与接受</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 9 -->
+            <article class="episode-item" id="ep9">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第九集：正信的告白</h3>
+                    <span class="episode-number">E09</span>
+                </div>
+                <div class="episode-content">
+                    <p>李正信终于向金洙元（女）告白，金洙元（女）感到非常痛苦。她不知道该如何拒绝正信，因为正信是她儿时的朋友，而且正信对她很真诚。</p>
+                    <p>吉罗琳（男）得知正信的告白后，感到非常愤怒。他决定向正信发起挑战，试图证明自己比正信更适合金洙元（女）。正信和吉罗琳（男）之间展开了一场激烈的竞争，金洙元（女）夹在中间，感到非常为难。</p>
+                    <div class="episode-tags">
+                        <span>告白</span>
+                        <span>竞争</span>
+                        <span>为难</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 10 -->
+            <article class="episode-item" id="ep10">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第十集：正信的离开</h3>
+                    <span class="episode-number">E10</span>
+                </div>
+                <div class="episode-content">
+                    <p>金洙元（女）最终拒绝了正信的告白，并告诉正信她喜欢的人是吉罗琳（男）。正信感到非常失望，但也理解了金洙元（女）的选择。</p>
+                    <p>正信决定离开，去追寻自己的梦想。吉罗琳（男）和金洙元（女）都感到非常失落，他们意识到自己已经离不开对方了。正信的离开让他们更加珍惜彼此，也让他们的感情更加深厚。</p>
+                    <div class="episode-tags">
+                        <span>拒绝</span>
+                        <span>离开</span>
+                        <span>珍惜</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 11 -->
+            <article class="episode-item" id="ep11">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第十一集：灵魂互换的真相</h3>
+                    <span class="episode-number">E11</span>
+                </div>
+                <div class="episode-content">
+                    <p>两人终于找到了身体交换的真相。原来，这是因为他们小时候在秘密花园里埋下的“时间胶囊”在雷雨中受到了影响，导致灵魂互换。</p>
+                    <p>他们意识到，只有通过某种特殊的方式才能打破这个诅咒。他们决定再次回到秘密花园，试图解开这个谜题。然而，他们并不知道，这个过程将带来更大的风险。</p>
+                    <div class="episode-tags">
+                        <span>真相</span>
+                        <span>秘密花园</span>
+                        <span>解开谜题</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 12 -->
+            <article class="episode-item" id="ep12">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第十二集：最后的告别</h3>
+                    <span class="episode-number">E12</span>
+                </div>
+                <div class="episode-content">
+                    <p>金洙元（女）和吉罗琳（男）再次回到秘密花园，但这一次，他们发现交换已经无法逆转。他们决定接受这个现实，并开始规划未来的生活。</p>
+                    <p>然而，就在他们准备接受现实的时候，一场突如其来的雷雨再次发生。金洙元（女）和吉罗琳（男）被雷击中，身体再次发生剧烈的震动。他们不知道这次会发生什么，但他们的心已经紧紧相连。</p>
+                    <div class="episode-tags">
+                        <span>告别</span>
+                        <span>接受现实</span>
+                        <span>雷雨</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 13 -->
+            <article class="episode-item" id="ep13">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第十三集：奇迹的恢复</h3>
+                    <span class="episode-number">E13</span>
+                </div>
+                <div class="episode-content">
+                    <p>雷雨过后，金洙元和吉罗琳发现自己回到了各自的身体里。他们欣喜若狂，紧紧拥抱在一起，确认了彼此的身份。</p>
+                    <p>然而，他们发现彼此的感情已经发生了变化。他们不再是朋友，而是恋人。他们决定开始一段新的恋情，不再受身份和灵魂的束缚。</p>
+                    <div class="episode-tags">
+                        <span>恢复</span>
+                        <span>拥抱</span>
+                        <span>恋人</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 14 -->
+            <article class="episode-item" id="ep14">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第十四集：公开恋情</h3>
+                    <span class="episode-number">E14</span>
+                </div>
+                <div class="episode-content">
+                    <p>金洙元和吉罗琳决定公开他们的恋情。他们邀请媒体参加他们的发布会，并展示了他们的甜蜜瞬间。</p>
+                    <p>然而，他们的恋情也面临着挑战。金洙元的母亲徐英玉对吉罗琳并不满意，她认为吉罗琳不够好。吉罗琳的母亲则对金洙元表示了怀疑。两人在家庭的压力下，不得不做出更多的努力来证明他们的感情。</p>
+                    <div class="episode-tags">
+                        <span>公开</span>
+                        <span>发布会</span>
+                        <span>家庭压力</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 15 -->
+            <article class="episode-item" id="ep15">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第十五集：母亲的祝福</h3>
+                    <span class="episode-number">E15</span>
+                </div>
+                <div class="episode-content">
+                    <p>经过一系列的磨合，徐英玉终于接受了吉罗琳。她开始主动关心吉罗琳，甚至教她做家务。吉罗琳的母亲也接受了金洙元，并开始支持他们的恋情。</p>
+                    <p>两人在家庭的祝福下，感情更加稳固。他们决定结婚，并开始筹备婚礼。然而，就在他们准备结婚的时候，他们发现了一个惊人的秘密。</p>
+                    <div class="episode-tags">
+                        <span>祝福</span>
+                        <span>结婚</span>
+                        <span>秘密</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 16 -->
+            <article class="episode-item" id="ep16">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第十六集：婚礼的危机</h3>
+                    <span class="episode-number">E16</span>
+                </div>
+                <div class="episode-content">
+                    <p>婚礼当天，吉罗琳的母亲突然出现，并声称吉罗琳并不是她的亲生女儿。这个消息让金洙元和吉罗琳都感到震惊。</p>
+                    <p>吉罗琳的母亲解释说，她当年因为意外失去了一个孩子，而吉罗琳是她在孤儿院收养的。她希望吉罗琳能够回到亲生父母身边。金洙元和吉罗琳面临着一个艰难的选择：是继续结婚，还是放弃这段感情。</p>
+                    <div class="episode-tags">
+                        <span>婚礼</span>
+                        <span>身份危机</span>
+                        <span>抉择</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 17 -->
+            <article class="episode-item" id="ep17">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第十七集：真相大白</h3>
+                    <span class="episode-number">E17</span>
+                </div>
+                <div class="episode-content">
+                    <p>经过一番调查，金洙元和吉罗琳发现吉罗琳的母亲在撒谎。她只是为了阻止吉罗琳嫁给金洙元。吉罗琳的母亲承认，她一直不喜欢金洙元，因为她认为金洙元是一个花花公子。</p>
+                    <p>金洙元向吉罗琳的母亲证明了自己的诚意，并表示他会永远爱吉罗琳。吉罗琳的母亲终于接受了金洙元，并祝福他们。</p>
+                    <div class="episode-tags">
+                        <span>真相</span>
+                        <span>证明诚意</span>
+                        <span>接受</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 18 -->
+            <article class="episode-item" id="ep18">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第十八集：幸福的结局</h3>
+                    <span class="episode-number">E18</span>
+                </div>
+                <div class="episode-content">
+                    <p>金洙元和吉罗琳终于举行了盛大的婚礼。他们在亲朋好友的见证下，交换了戒指，许下了永恒的誓言。</p>
+                    <p>婚后，两人过着幸福的生活。金洙元继续经营高尔夫球会，吉罗琳继续她的演艺事业。他们偶尔也会回忆起那段灵魂互换的经历，并将其作为一段美好的回忆。</p>
+                    <div class="episode-tags">
+                        <span>婚礼</span>
+                        <span>誓言</span>
+                        <span>幸福结局</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 19 -->
+            <article class="episode-item" id="ep19">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第十九集：番外篇 - 育儿</h3>
+                    <span class="episode-number">E19</span>
+                </div>
+                <div class="episode-content">
+                    <p>几年后，金洙元和吉罗琳迎来了他们的孩子。金洙元（女）变成了母亲，吉罗琳（男）变成了父亲。</p>
+                    <p>育儿的生活充满了挑战和乐趣。徐英玉也成为了奶奶，她开始教孩子一些“毒舌”技巧。金洙元和吉罗琳在育儿的道路上互相支持，共同成长。</p>
+                    <div class="episode-tags">
+                        <span>番外</span>
+                        <span>育儿</span>
+                        <span>家庭生活</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 20 -->
+            <article class="episode-item" id="ep20">
+                <div class="episode-header" onclick="toggleEpisode(this)">
+                    <h3>第二十集：番外篇 - 重逢</h3>
+                    <span class="episode-number">E20</span>
+                </div>
+                <div class="episode-content">
+                    <p>李正信从国外回来，与金洙元和吉罗琳重逢。正信已经放下了过去的感情，并找到了自己的幸福。</p>
+                    <p>四人再次聚在一起，回忆起儿时的时光。他们感叹时光飞逝，但他们的友谊依然不变。金洙元和吉罗琳看着正信，心中充满了感激。</p>
+                    <div class="episode-tags">
+                        <span>番外</span>
+                        <span>重逢</span>
+                        <span>友谊</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Recommendation Section -->
+        <section class="recommendation">
+            <h2>相关精彩片段</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <span class="play-icon">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>罗文姬金句集锦</h4>
+                        <p style="font-size: 0.85rem; color: #888;">毒舌老妈的精彩瞬间</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <span class="play-icon">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>玄彬河智苑甜蜜互动</h4>
+                        <p style="font-size: 0.85rem; color: #888;">雨中浪漫名场面</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        <span class="play-icon">▶</span>
+                    </div>
+                    <div class="video-info">
+                        <h4>灵魂互换初体验</h4>
+                        <p style="font-size: 0.85rem; color: #888;">两人互换后的尴尬趣事</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 韩剧档案室 - 秘密花园剧情分集介绍专题页</p>
+            <p>本页面仅供剧情介绍与赏析，所有版权归原制作方所有。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的折叠面板交互逻辑
+        function toggleEpisode(header) {
+            const item = header.parentElement;
+            const content = item.querySelector('.episode-content');
+            const allContents = document.querySelectorAll('.episode-content');
+            
+            // 关闭其他所有打开的项
+            allContents.forEach(c => {
+                if (c !== content) {
+                    c.classList.remove('active');
+                }
+            });
+
+            // 切换当前项
+            content.classList.toggle('active');
+        }
+
+        // 导航按钮点击高亮逻辑
+        const navButtons = document.querySelectorAll('.chapter-btn');
+        navButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                navButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 平滑滚动到对应区域
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+                          </html>
