@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外拍活动 - 旅行摄影攻略与组织平台</title>
+    <meta name="description" content="外拍活动网提供全国各地的户外摄影活动信息、拍摄地点推荐、器材选购指南及摄影技巧分享。加入我们的外拍团，用镜头记录自然之美。">
+    <meta name="keywords" content="外拍活动, 户外摄影, 摄影团, 摄影教程, 摄影器材, 风景摄影">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-light: #f8f9fa;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+        }
+
+        .btn-cta:hover {
+            background-color: #1a252f;
+            color: var(--white);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/camera/1600/900.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-search {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .hero-search input {
+            flex: 1;
+            padding: 0.8rem;
+            border-radius: var(--border-radius);
+            border: none;
+            outline: none;
+        }
+
+        .hero-search button {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* 活动分类 */
+        .categories {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .category-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .category-card p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* 热门活动 */
+        .featured-activities {
+            padding: 3rem 0;
+            background-color: var(--white);
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .activity-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .activity-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .activity-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .activity-card:hover .activity-image img {
+            transform: scale(1.05);
+        }
+
+        .activity-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .activity-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .activity-meta {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .activity-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .activity-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .activity-desc {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .activity-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* 摄影技巧指南 */
+        .guide-section {
+            padding: 4rem 0;
+            background-color: var(--bg-light);
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .guide-article h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .guide-article p {
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+
+        .guide-list {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .guide-list h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        .guide-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .guide-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            padding: 4rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 1.2rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .faq-question.active::after {
+            content: "-";
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-gray);
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.2rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                摄影圈<span>外拍</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">活动列表</a></li>
+                    <li><a href="#">热门地点</a></li>
+                    <li><a href="#">器材评测</a></li>
+                    <li><a href="#">加入我们</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-cta">发布活动</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>探索光影，记录世界</h1>
+                <p>无论你是专业摄影师还是摄影爱好者，这里都有最适合你的外拍活动。加入我们，用镜头捕捉自然之美。</p>
+                <div class="hero-search">
+                    <input type="text" placeholder="搜索城市、地点或活动类型...">
+                    <button>搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories">
+            <div class="container">
+                <div class="section-title">
+                    <h2>热门拍摄主题</h2>
+                    <p>按兴趣选择，发现更多拍摄灵感</p>
+                </div>
+                <div class="category-grid">
+                    <article class="category-card">
+                        <span class="category-icon">🏔️</span>
+                        <h3>自然风光</h3>
+                        <p>山川、湖泊、日落与星空的极致记录</p>
+                    </article>
+                    <article class="category-card">
+                        <span class="category-icon">🏙️</span>
+                        <h3>城市建筑</h3>
+                        <p>都市繁华、现代建筑与街头人文</p>
+                    </article>
+                    <article class="category-card">
+                        <span class="category-icon">🌸</span>
+                        <h3>人像写真</h3>
+                        <p>户外人像、胶片感与情绪表达</p>
+                    </article>
+                    <article class="category-card">
+                        <span class="category-icon">🦋</span>
+                        <h3>微距摄影</h3>
+                        <p>昆虫、花卉纹理与微观世界的探索</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Activities Section -->
+        <section class="featured-activities">
+            <div class="container">
+                <div class="section-title">
+                    <h2>近期热门外拍活动</h2>
+                    <p>精选优质摄影团，由专业领队带队</p>
+                </div>
+                <div class="activity-grid">
+                    <!-- Activity 1 -->
+                    <article class="activity-card">
+                        <div class="activity-image">
+                            <span class="activity-badge">报名中</span>
+                            <img src="https://picsum.photos/seed/forest/400/300.jpg" alt="秋季森林光影外拍">
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-meta">
+                                <span>📅 10月15日</span>
+                                <span>📍 远郊森林公园</span>
+                            </div>
+                            <h3 class="activity-title">秋季森林光影创作营</h3>
+                            <p class="activity-desc">捕捉秋日森林的金黄与斑驳光影，学习逆光拍摄技巧，适合中长焦镜头拍摄。</p>
+                            <div class="activity-footer">
+                                <span class="price">¥299</span>
+                                <a href="#" class="btn-outline">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Activity 2 -->
+                    <article class="activity-card">
+                        <div class="activity-image">
+                            <span class="activity-badge">即将满员</span>
+                            <img src="https://picsum.photos/seed/city/400/300.jpg" alt="城市夜景摄影">
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-meta">
+                                <span>📅 10月18日</span>
+                                <span>📍 市中心CBD</span>
+                            </div>
+                            <h3 class="activity-title">城市夜景与光绘创作</h3>
+                            <p class="activity-desc">探索城市夜晚的霓虹与车流光轨，体验光绘摄影的乐趣，适合新手入门。</p>
+                            <div class="activity-footer">
+                                <span class="price">¥199</span>
+                                <a href="#" class="btn-outline">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Activity 3 -->
+                    <article class="activity-card">
+                        <div class="activity-image">
+                            <span class="activity-badge">优惠</span>
+                            <img src="https://picsum.photos/seed/beach/400/300.jpg" alt="海岛日落">
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-meta">
+                                <span>📅 10月20日</span>
+                                <span>📍 东海岸沙滩</span>
+                            </div>
+                            <h3 class="activity-title">海岛日落与剪影大片</h3>
+                            <p class="activity-desc">在日落时分捕捉海面的金色时刻，学习剪影构图与曝光控制。</p>
+                            <div class="activity-footer">
+                                <span class="price">¥399</span>
+                                <a href="#" class="btn-outline">查看详情</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section class="guide-section">
+            <div class="container">
+                <div class="guide-container">
+                    <div class="guide-article">
+                        <h3>外拍活动全攻略：从准备到后期</h3>
+                        <p>参加外拍活动是提升摄影技术、结识同好的绝佳途径。但一次成功的出片离不开周密的准备。</p>
+                        <h4>1. 器材准备</h4>
+                        <p>根据拍摄主题选择器材。风光拍摄建议携带广角镜头，人像拍摄可带定焦大光圈镜头。同时，别忘了携带备用电池和存储卡，户外环境多变，电量管理至关重要。</p>
+                        <h4>2. 装备清单</h4>
+                        <p>除了相机和镜头，三脚架、快门线、清洁套装和遮光罩也是必备品。如果是长途外拍，还需注意防晒、防雨和保暖衣物。</p>
+                        <h4>3. 拍摄技巧</h4>
+                        <p>在户外光线复杂的情况下，学会使用直方图辅助曝光。多尝试不同的构图方式，利用前景和背景的层次感增加照片的纵深感。</p>
+                    </div>
+                    <aside class="guide-list">
+                        <h3>新手必看</h3>
+                        <ul>
+                            <li>如何判断外拍团的专业度？</li>
+                            <li>新手适合参加哪种类型的活动？</li>
+                            <li>外拍活动中如何保护相机安全？</li>
+                            <li>遇到突发天气怎么办？</li>
+                            <li>如何与模特/领队有效沟通？</li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">外拍活动需要自带相机吗？</button>
+                    <div class="faq-answer">
+                        <p>大多数外拍活动建议自带相机，以便充分体验拍摄过程。但也有部分教学性质的活动提供租赁服务，具体需查看活动详情页说明。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">活动包含午餐或交通吗？</button>
+                    <div class="faq-answer">
+                        <p>这取决于活动的具体类型。有些户外徒步类活动会组织野餐，而城市漫步类活动通常由参与者自行前往集合点。详细信息请参考活动公告。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">摄影水平一般能参加吗？</button>
+                    <div class="faq-answer">
+                        <p>完全可以。我们的活动分为不同难度等级，专门针对初学者设置了基础讲解和现场指导环节，帮助你快速入门。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">摄影圈外拍致力于为摄影爱好者提供最优质的户外拍摄平台，连接每一位热爱光影的人。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">风光摄影</a></li>
+                        <li><a href="#">人像写真</a></li>
+                        <li><a href="#">微距摄影</a></li>
+                        <li><a href="#">黑白摄影</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">活动规则</a></li>
+                        <li><a href="#">退改政策</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">成为领队</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">小红书</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 摄影圈外拍活动网 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ 交互逻辑
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    // 切换当前状态
+                    question.classList.toggle('active');
+                    
+                    const answer = question.nextElementSibling;
+                    if (question.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    } else {
+                        answer.style.maxHeight = 0;
+                    }
+
+                    // 可选：关闭其他打开的答案
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+                            otherQuestion.classList.remove('active');
+                            otherQuestion.nextElementSibling.style.maxHeight = 0;
+                        }
+                    });
+                });
+            });
+
+            // 简单的搜索框交互反馈
+            const searchBtn = document.querySelector('.hero-search button');
+            const searchInput = document.querySelector('.hero-search input');
+            
+            searchBtn.addEventListener('click', () => {
+                if(searchInput.value.trim()) {
+                    alert('正在搜索关于：' + searchInput.value + ' 的外拍活动...');
+                } else {
+                    searchInput.focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
